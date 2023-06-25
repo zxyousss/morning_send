@@ -1,5 +1,4 @@
 from datetime import date, datetime
-import math
 from wechatpy import WeChatClient
 from wechatpy.client.api import WeChatMessage, WeChatTemplate
 import requests
@@ -17,7 +16,7 @@ def get_weather(city_name):
     res = requests.get(url).json()
     print(res)
     weather = res['lives'][0]
-    return weather['weather'], math.floor(weather['temperature'])
+    return weather['weather'], weather['temperature_float']
 
 
 def get_count(start_date):
