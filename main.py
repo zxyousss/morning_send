@@ -14,11 +14,9 @@ app_secret = os.environ["APP_SECRET"]
 
 def get_weather(city_name):
     url = "https://restapi.amap.com/v3/weather/weatherInfo?key=007f1f43e5760ff51b1d40062d9a6bdc&city=" + city_name
-    print(requests.get(url))
     res = requests.get(url).json()
-    print(res)
-    weather = res['data']['list'][0]
-    return weather['weather'], math.floor(weather['temp'])
+    weather = res['lives'][0]
+    return weather['weather'], math.floor(weather['temperature'])
 
 
 def get_count(start_date):
