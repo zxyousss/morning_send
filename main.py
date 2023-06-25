@@ -10,11 +10,10 @@ today = datetime.now()
 sender_infos = eval(os.environ["SENDER_INFOS"])
 app_id = os.environ["APP_ID"]
 app_secret = os.environ["APP_SECRET"]
-gaode_key = os.environ["GAODE_KEY"]
 
 
 def get_weather(city_name):
-    url = "https://restapi.amap.com/v3/weather/weatherInfo?key=" + gaode_key + "&city=" + city_name
+    url = "https://restapi.amap.com/v3/weather/weatherInfo?key=007f1f43e5760ff51b1d40062d9a6bdc&city=" + city_name
     print(requests.get(url))
     res = requests.get(url).json()
     print(res)
