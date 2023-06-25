@@ -7,6 +7,7 @@ import random
 
 today = datetime.now()
 sender_infos = eval(os.environ["SENDER_INFOS"])
+print(sender_infos)
 app_id = os.environ["APP_ID"]
 app_secret = os.environ["APP_SECRET"]
 
@@ -52,6 +53,7 @@ for sender_info in sender_infos:
     wea, temperature = get_weather(sender_info["city"])
     data = {"user_name": {"value": sender_info["user_name"]}, "weather": {"value": wea}, "temperature": {"value": temperature}, "live_days": {"value": get_count(sender_info["start_date"])}, "birthday_left": {"value": get_birthday(sender_info["birthday"])}, "words_chp": {"value": get_words(
         'chp'), "color": get_random_color()}, "words_du": {"value": get_words('du'), "color": get_random_color()}, "words_pyq": {"value": get_words('pyq'), "color": get_random_color()}}
+    print(data)
     res = wm.send_template(
         sender_info["user_id"], sender_info["template_id"], data)
     print(res)
