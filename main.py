@@ -15,6 +15,7 @@ app_secret = os.environ["APP_SECRET"]
 def get_weather(city_name):
     url = "http://autodev.openspeech.cn/csp/api/v2.1/weather?openId=aiuicus&clientType=android&sign=android&city=" + city_name
     res = requests.get(url).json()
+    print(res)
     weather = res['data']['list'][0]
     return weather['weather'], math.floor(weather['temp'])
 
