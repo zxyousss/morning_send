@@ -52,7 +52,7 @@ wm = WeChatMessage(client)
 for sender_info in sender_infos:
     print(sender_info)
     wea, temperature = get_weather(sender_info["city"])
-    data = {"user_name": {"value": sender_info["user_name"]}, "weather": {"value": wea}, "temperature": {"value": temperature}, "live_days": {"value": get_count(sender_info["start_date"])}, "birthday_left": {"value": get_birthday(sender_info["birthday"])}, "words_chp": {"value": get_words(
+    data = {"user_name": {"value": sender_info["user_name"]},"other_name": {"value": sender_info["other_name"]}, "weather": {"value": wea}, "temperature": {"value": temperature}, "live_days": {"value": get_count(sender_info["start_date"])},"other_live_days": {"value": get_count(sender_info["other_start_date"])}, "birthday_left": {"value": get_birthday(sender_info["birthday"])}, "other_birthday_left": {"value": get_birthday(sender_info["other_birthday"])},"words_chp": {"value": get_words(
         'chp'), "color": get_random_color()}, "words_du": {"value": get_words('du'), "color": get_random_color()}, "words_pyq": {"value": get_words('pyq'), "color": get_random_color()}}
     print(data)
     res = wm.send_template(
