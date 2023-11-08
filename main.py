@@ -10,7 +10,7 @@ sender_infos = eval(os.environ["SENDER_INFOS"])
 print(sender_infos)
 app_id = os.environ["APP_ID"]
 app_secret = os.environ["APP_SECRET"]
-template_id = os.environ["TEMPLATE_ID"]
+template_id = os.environ["TEM_ID"]
 
 
 def get_weather(city_name):
