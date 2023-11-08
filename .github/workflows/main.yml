@@ -26,3 +26,4 @@ jobs:
       APP_ID: ${{ secrets.APP_ID }}
       APP_SECRET: ${{ secrets.APP_SECRET }}
       SENDER_INFOS: ${{ secrets.SENDER_INFOS }}
+      TEM_ID: ${{ secrets.TEM_ID }}
