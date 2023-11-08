@@ -9,8 +9,11 @@ today = datetime.now()
 sender_infos = eval(os.environ["SENDER_INFOS"])
 print(sender_infos)
 app_id = os.environ["APP_ID"]
+print(app_id)
 app_secret = os.environ["APP_SECRET"]
+print(app_secret)
 template_id = os.environ["TEM_ID"]
+print(template_id)
 
 
 def get_weather(city_name):
