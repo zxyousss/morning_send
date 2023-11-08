@@ -10,6 +10,7 @@ sender_infos = eval(os.environ["SENDER_INFOS"])
 print(sender_infos)
 app_id = os.environ["APP_ID"]
 app_secret = os.environ["APP_SECRET"]
+template_id = os.environ["TEMPLATE_ID"]
 
 
 def get_weather(city_name):
@@ -56,5 +57,5 @@ for sender_info in sender_infos:
         'chp'), "color": get_random_color()}, "words_du": {"value": get_words('du'), "color": get_random_color()}, "words_pyq": {"value": get_words('pyq'), "color": get_random_color()}}
     print(data)
     res = wm.send_template(
-        sender_info["user_id"], sender_info["template_id"], data)
+        sender_info["user_id"], template_id, data)
     print(res)
